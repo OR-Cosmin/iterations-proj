@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import IterationDisplay from "./IterationDisplay";
+import Form from "./Form";
 
 // Start receives the inputs from the checkboxes and assigns them a random id
 const Start = () => {
@@ -24,6 +25,7 @@ const addId = (id) => {
         </div>
       )}
 
+      <Form addId={addId} setToggleIterationView={setToggleIterationView} />
     </div>
   );
 };
