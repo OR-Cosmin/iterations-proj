@@ -18,9 +18,9 @@ const addId = (id) => {
   };
 
   return (
-    <div>
+    <div className="main--wrapper">
       {toggleIterationView && (
-        <div className="first--show">
+        <div className="show--first">
           <IterationDisplay iterationList={iterationList} deleteTitle={deleteTitle} />
         </div>
       )}

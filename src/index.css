@@ -20,6 +20,12 @@ code {
   justify-content: center;
 }
 
+.main--wrapper {
+    border: 1px solid #ddd;
+    padding: 40px;
+    box-shadow: 5px 5px 25px 0 rgb(46 61 73 / 20%);
+}
+
 /*List Iterations*/
 .x-btn {
   float: right;
@@ -63,6 +69,8 @@ code {
 .start--btn:hover {
   box-shadow: 5px 5px 25px 0 rgb(46 61 73 / 20%);
   cursor: pointer;
+  background: #0d396b;
+  color: white;
 }
 
 button.next--btn:disabled {
@@ -214,3 +222,20 @@ label {
 .question-text {
   color: #0d396b;
 }
+
+.wahrFalsch--Counter > p {
+  padding: 20px;
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
+  margin-right: 10px;
+  box-shadow: 5px 5px 25px 0 rgb(46 61 73 / 20%);
+}
+
+.wahr--Counter {
+  background-color: green;
+}
+.falsch--Counter {
+  background-color: red;
+}
+
