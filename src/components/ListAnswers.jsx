@@ -15,7 +15,6 @@ const ListAnswers = ({ choices, title, id, date, time, finished, deleteTitle,}) 
         <th>Status</th>
         <th>Time</th>
         <th>Date</th>
-        <th>Remove</th>
       </tr>
       <tr>
         <td
@@ -31,17 +30,17 @@ const ListAnswers = ({ choices, title, id, date, time, finished, deleteTitle,}) 
           <h3 className="td--title--h3">{title}</h3>
           <h4 className={toggleList ? "yes" : "no"}>{listAnswers}</h4>
         </td>
-        <td><span  className = "span--status" style = {finished === true ? {background:"green"}:{background:"red"}}>{finished === true ? "complete" : "incomplete"}</span></td>
+        <td><span  className = "span--status" style = {finished === true ? {background:"green"}:{background:"red"}}>{finished === true ? " " : " "}</span></td>
         <td>{time}</td>
         <td>{date}</td>
         <td style={{ background: "#f0a512" }}>
           {" "}
-          <span className="close--icon">
+         
             <FaTimes
-              style={{ color: "red", cursor: "pointer" }}
+              style={{ color: "red", cursor: "pointer", width: "50px", height: "50px" }}
               onClick={() => deleteTitle(id)}
             />
-          </span>
+        
         </td>
       </tr>
       </tbody>

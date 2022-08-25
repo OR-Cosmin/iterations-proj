@@ -49,7 +49,6 @@ const Inputs = ({ addId, setToggleIterationView }) => {
   //Title & Checkbox 
   const [titleInput, setTitleInput] = useState([]); 
   const [checkboxValues, setCheckboxValues] = useState([]); 
-  const [toggleCheckbox, setToggleCheckbox] = useState(false); 
   
   //Toggle iteration & questions
   const [startIteration, setStartIteration] = useState(false);
@@ -86,32 +85,28 @@ const Inputs = ({ addId, setToggleIterationView }) => {
     setText(e.target.value);
   };
 
+//Disable
 
-//   const [titleInput, setTitleInput] = useState([]); 
-//   const [checkboxValues, setCheckboxValues] = useState([]); 
-//   const [toggleCheckbox, setToggleCheckbox] = useState(false); //used to enable disable checboxes
-  
+ const [ numb , setNumb] = useState(0)
   const handleCheckboxValues = (e) => {
     const { value, checked } = e.target;
+  
     checked === true
       ? setCheckboxValues((prevState) => {
           return [...prevState, value];
         })
-      : setCheckboxValues(checkboxValues.filter((e) => e !== value));
-    checked === true ? setToggleCheckbox(true) : setToggleCheckbox(false); 
+      : setCheckboxValues(checkboxValues.filter((e) => e !== value));  
+
+      checked === true ? setNumb(numb + 1) : setNumb(numb - 1)
   };
 
-  //the array that gets constructed after each iteration
-  // const completeIterationArr = {
-  //   time: [timeI],
-  //   date: [dateI],
-  //   iteration: [...titleInput],
-  //   choices: [...checkboxValues],
-  // };
+ 
+ 
+
+console.log(numb,"numb")
+//console.log(toggleCheckbox,"tgl")
 
 
-  // const [startIteration, setStartIteration] = useState(false);
-  // const [text, setText] = useState("");
 
  //BtnStart
   const nextIteration = (e) => {
@@ -128,7 +123,7 @@ const Inputs = ({ addId, setToggleIterationView }) => {
     e.preventDefault();
     if (count + 1 < questions.length) {
       setCount(count + 1); //by increasing the count you change the questions
-      setToggleCheckbox((current) => !current); //used for next button enabled/disabled
+      setNumb(0)
     } else {
       setCount(0); //set the count back to 0 for new iterations after submit button is clicked
       setShowInputTitle(true);
@@ -137,7 +132,7 @@ const Inputs = ({ addId, setToggleIterationView }) => {
       setShowStartBtn(true);
       setToggleIterationView((current) => !current);
       addId({ finished: true, sum: completeIterationArr }); //adds responses to first page (set status of iteration to true if all questions have been answered)
-      setToggleCheckbox((current) => !current);
+      setNumb(0)
     }
   };
   //BtnClose
@@ -154,7 +149,6 @@ const Inputs = ({ addId, setToggleIterationView }) => {
     addId({ finished: false, sum: completeIterationArr });
     setToggleIterationView((current) => !current);
   };
-
 
 
   return (
@@ -184,7 +178,7 @@ const Inputs = ({ addId, setToggleIterationView }) => {
               <div className="form--btns">
               <BtnNextSubmit
                   optionClicked={optionClicked}
-                  toggleCheckbox={!toggleCheckbox}
+                  numb = {numb}
                   count={count}
                 />
                 <BtnClose closeBtn={closeBtn} />

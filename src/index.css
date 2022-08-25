@@ -48,15 +48,18 @@ code {
   justify-content: space-between;
   align-items: center;
   background: #f0a512;
+  margin: 10px 0;
+  border: 1px solid #ddd;
 }
 
 .next--btn,
 .start--btn {
   background: white;
-  font-weight: 900;
+  font-weight: 800;
   padding: 10px;
   color: #0d396b;
   border: 2px solid #0d396b;
+  letter-spacing: 1px;
 }
 
 .next--btn {
@@ -67,15 +70,21 @@ code {
 
 .next--btn:hover,
 .start--btn:hover {
-  box-shadow: 5px 5px 25px 0 rgb(46 61 73 / 20%);
   cursor: pointer;
-  background: #0d396b;
+}
+.start--btn:hover {
+  background-color: #0d396b;
   color: white;
 }
 
 button.next--btn:disabled {
   color: #ddd;
   border-color: #ddd;
+}
+
+button.next--btn:hover:enabled {
+  background-color: #0d396b;
+  color: white;
 }
 
 .form--inputs {
@@ -104,6 +113,7 @@ button.next--btn:disabled {
 input[type="text"] {
   padding: 10px;
   border: 2px solid #0d396b;
+  outline-color: #0d396b;
 }
 
 .listItems--container {
@@ -116,7 +126,6 @@ table {
 }
 
 table,
-th,
 td {
   padding: 20px;
   width: 100%;
@@ -189,11 +198,11 @@ td {
 }
 
 .span--status {
-  border-radius: 10px;
-  padding: 5px;
-  color: white;
-  font-weight: 600;
-  box-shadow: 5px 5px 25px 0 rgb(46 61 73 / 20%);
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 5px 5px 25px 0 rgb(46 61 73 / 20%);
 }
 
 .questions--container {
@@ -227,15 +236,34 @@ label {
   padding: 20px;
   color: white;
   font-weight: 700;
-  border-radius: 10px;
+ 
   margin-right: 10px;
   box-shadow: 5px 5px 25px 0 rgb(46 61 73 / 20%);
 }
 
 .wahr--Counter {
   background-color: green;
+  height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    box-shadow: 5px 5px 25px 0 rgb(46 61 73 / 20%);
 }
 .falsch--Counter {
   background-color: red;
+  height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    box-shadow: 5px 5px 25px 0 rgb(46 61 73 / 20%);
+}
+
+.span--weight{
+  font-weight: 700;
 }
 

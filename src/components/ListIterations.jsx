@@ -15,9 +15,9 @@ const ListIterations = ({ iterationList, deleteTitle }) => {
 
   return (
     <div>
-      <div className="wahrFalsch--Counter" style = {iterationList.length > 0 ? {display:"flex"}:{display:"none"}}>
-        <p className="wahr--Counter" style = {countTrue > 0 ? {display:"inline-flex"}:{display:"none"}}>{countTrue}</p>
-        <p className="falsch--Counter" style = {countFalse > 0 ? {display:"inline-flex"}:{display:"none"}}>{countFalse}</p>
+      <div className="wahrFalsch--Counter" style = {iterationList.length > 0 ? {display:"block"}:{display:"none"}}>
+      <div className="wahrFalsch--Counter--Wahr" style = {countTrue > 0 ? {display:"block"}:{display:"none"}}><span className="span--weight">Finished</span><p className="wahr--Counter">{countTrue}</p></div>
+      <div className="wahrFalsch--Counter--Falsch" style = {countFalse > 0 ? {display:"block"}:{display:"none"}}><span className="span--weight">Not-Finished</span><p className="falsch--Counter">{countFalse}</p></div>
       </div>
         {iterationList.map((mapDisplay) => {
         return (
