@@ -33,9 +33,17 @@ code {
 
 .yes {
   display: grid;
-  cursor: initial;
-  padding: 20px;
-  transform: translate(0);
+    cursor: initial;
+    padding: 20px;
+    transform: translate(0);
+    position: absolute;
+    background: white;
+    margin: 17px 10px;
+    box-shadow: 5px 5px 25px 0 rgb(46 61 73 / 20%);
+    border: 1px solid #f0a512;
+    z-index: 1;
+    width: 15%;
+    color: black;
 }
 
 .no {
@@ -143,11 +151,12 @@ td {
 .td--title {
   cursor: pointer;
   padding: 10px;
-  background-color: #ddd;
+  background-color: white;
 }
 
 .td--title:hover {
-  background-color: #6c6c6c;
+  background-color: #0d396b;
+  color: white;
 }
 
 .rotate--down {

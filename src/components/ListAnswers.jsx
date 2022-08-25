@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FaTimes, FaArrowCircleDown } from "react-icons/fa";
 
 const ListAnswers = ({ choices, title, id, date, time, finished, deleteTitle,}) => {
-
   const [toggleList, setToggleList] = useState(false);
   const listAnswers = choices.map((id) => (  <span key={id}>{id}{choices[id]}</span>
   ));
